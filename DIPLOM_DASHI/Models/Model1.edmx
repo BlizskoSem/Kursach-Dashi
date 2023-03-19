@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище Kontrol_PitaniaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Авторизация">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Воспитатели">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gruppa" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Группа">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Название_Группы" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pitanie" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Завтрак">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Каша" Type="nvarchar" MaxLength="50" />
+          <Property Name="Чай" Type="nvarchar" MaxLength="50" />
+          <Property Name="Булочка" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pitanie" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Обед">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Первое" Type="nvarchar" MaxLength="50" />
+          <Property Name="Второе" Type="nvarchar" MaxLength="50" />
+          <Property Name="Напиток" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pitanie" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ребенок">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Familiya" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imya" Type="nvarchar" MaxLength="50" />
+          <Property Name="Otchestvo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Название_Группы" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pitanie" Type="nvarchar" MaxLength="50" />
+          <Property Name="Дата_Рождения" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Регистрация">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fio" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ужин">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Йогурт" Type="nvarchar" MaxLength="50" />
+          <Property Name="Запеканка" Type="nvarchar" MaxLength="50" />
+          <Property Name="Молоко" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pitanie" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Хранилище Kontrol_PitaniaModelContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Авторизация" EntityType="Self.Авторизация" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Воспитатели" EntityType="Self.Воспитатели" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Группа" EntityType="Self.Группа" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Завтрак" EntityType="Self.Завтрак" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Обед" EntityType="Self.Обед" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ребенок" EntityType="Self.Ребенок" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Регистрация" EntityType="Self.Регистрация" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ужин" EntityType="Self.Ужин" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Kontrol_PitaniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Авторизация">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Группа">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Название_Группы" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pitanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Завтрак">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Каша" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Чай" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Булочка" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pitanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Обед">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Первое" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Второе" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Напиток" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pitanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ребенок">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Familiya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Otchestvo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Название_Группы" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pitanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Дата_Рождения" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Регистрация">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ужин">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Йогурт" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Запеканка" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Молоко" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pitanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Kontrol_PitaniaEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Авторизация" EntityType="Self.Авторизация" />
+          <EntitySet Name="Группа" EntityType="Self.Группа" />
+          <EntitySet Name="Завтрак" EntityType="Self.Завтрак" />
+          <EntitySet Name="Обед" EntityType="Self.Обед" />
+          <EntitySet Name="Ребенок" EntityType="Self.Ребенок" />
+          <EntitySet Name="Регистрация" EntityType="Self.Регистрация" />
+          <EntitySet Name="Ужин" EntityType="Self.Ужин" />
+          <EntitySet Name="Воспитатели" EntityType="Kontrol_PitaniaModel.Воспитатели" />
+        </EntityContainer>
+        <EntityType Name="Воспитатели">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gruppa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Kontrol_PitaniaModelContainer" CdmEntityContainer="Kontrol_PitaniaEntities1">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Авторизация">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Авторизация">
+              <MappingFragment StoreEntitySet="Авторизация">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Группа">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Группа">
+              <MappingFragment StoreEntitySet="Группа">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Название_Группы" ColumnName="Название_Группы" />
+                <ScalarProperty Name="Pitanie" ColumnName="Pitanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Завтрак">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Завтрак">
+              <MappingFragment StoreEntitySet="Завтрак">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Каша" ColumnName="Каша" />
+                <ScalarProperty Name="Чай" ColumnName="Чай" />
+                <ScalarProperty Name="Булочка" ColumnName="Булочка" />
+                <ScalarProperty Name="Pitanie" ColumnName="Pitanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Обед">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Обед">
+              <MappingFragment StoreEntitySet="Обед">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Первое" ColumnName="Первое" />
+                <ScalarProperty Name="Второе" ColumnName="Второе" />
+                <ScalarProperty Name="Напиток" ColumnName="Напиток" />
+                <ScalarProperty Name="Pitanie" ColumnName="Pitanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ребенок">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Ребенок">
+              <MappingFragment StoreEntitySet="Ребенок">
+                <ScalarProperty Name="Дата_Рождения" ColumnName="Дата_Рождения" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Familiya" ColumnName="Familiya" />
+                <ScalarProperty Name="Imya" ColumnName="Imya" />
+                <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
+                <ScalarProperty Name="Название_Группы" ColumnName="Название_Группы" />
+                <ScalarProperty Name="Pitanie" ColumnName="Pitanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Регистрация">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Регистрация">
+              <MappingFragment StoreEntitySet="Регистрация">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Fio" ColumnName="Fio" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ужин">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Ужин">
+              <MappingFragment StoreEntitySet="Ужин">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Йогурт" ColumnName="Йогурт" />
+                <ScalarProperty Name="Запеканка" ColumnName="Запеканка" />
+                <ScalarProperty Name="Молоко" ColumnName="Молоко" />
+                <ScalarProperty Name="Pitanie" ColumnName="Pitanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Воспитатели">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Воспитатели">
+              <MappingFragment StoreEntitySet="Воспитатели">
+                <ScalarProperty Name="Gruppa" ColumnName="Gruppa" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
