@@ -18,8 +18,6 @@ namespace DIPLOM_DASHI.Models
         public string Familiya { get; set; }
         public string Imya { get; set; }
         public string Otchestvo { get; set; }
-        public string Название_Группы { get; set; }
-        public string Pitanie { get; set; }
         public Nullable<System.DateTime> Дата_Рождения { get; set; }
     }
 }

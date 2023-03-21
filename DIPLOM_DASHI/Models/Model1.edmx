@@ -68,8 +68,6 @@
           <Property Name="Familiya" Type="nvarchar" MaxLength="50" />
           <Property Name="Imya" Type="nvarchar" MaxLength="50" />
           <Property Name="Otchestvo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Название_Группы" Type="nvarchar" MaxLength="50" />
-          <Property Name="Pitanie" Type="nvarchar" MaxLength="50" />
           <Property Name="Дата_Рождения" Type="datetime" />
         </EntityType>
         <EntityType Name="Регистрация">
@@ -156,18 +154,6 @@
           <Property Name="Напиток" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Pitanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Ребенок">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Familiya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Imya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Otchestvo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Название_Группы" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pitanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Дата_Рождения" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="Регистрация">
           <Key>
             <PropertyRef Name="Id" />
@@ -196,10 +182,10 @@
           <EntitySet Name="Группа" EntityType="Self.Группа" />
           <EntitySet Name="Завтрак" EntityType="Self.Завтрак" />
           <EntitySet Name="Обед" EntityType="Self.Обед" />
-          <EntitySet Name="Ребенок" EntityType="Self.Ребенок" />
           <EntitySet Name="Регистрация" EntityType="Self.Регистрация" />
           <EntitySet Name="Ужин" EntityType="Self.Ужин" />
           <EntitySet Name="Воспитатели" EntityType="Kontrol_PitaniaModel.Воспитатели" />
+          <EntitySet Name="Ребенок" EntityType="Kontrol_PitaniaModel.Ребенок" />
         </EntityContainer>
         <EntityType Name="Воспитатели">
           <Key>
@@ -208,6 +194,16 @@
           <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Gruppa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ребенок">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Familiya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Otchestvo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Дата_Рождения" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -267,19 +263,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ребенок">
-            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Ребенок">
-              <MappingFragment StoreEntitySet="Ребенок">
-                <ScalarProperty Name="Дата_Рождения" ColumnName="Дата_Рождения" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Familiya" ColumnName="Familiya" />
-                <ScalarProperty Name="Imya" ColumnName="Imya" />
-                <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
-                <ScalarProperty Name="Название_Группы" ColumnName="Название_Группы" />
-                <ScalarProperty Name="Pitanie" ColumnName="Pitanie" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Регистрация">
             <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Регистрация">
               <MappingFragment StoreEntitySet="Регистрация">
@@ -310,6 +293,17 @@
                 <ScalarProperty Name="Gruppa" ColumnName="Gruppa" />
                 <ScalarProperty Name="FIO" ColumnName="FIO" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ребенок">
+            <EntityTypeMapping TypeName="Kontrol_PitaniaModel.Ребенок">
+              <MappingFragment StoreEntitySet="Ребенок">
+                <ScalarProperty Name="Дата_Рождения" ColumnName="Дата_Рождения" />
+                <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
+                <ScalarProperty Name="Imya" ColumnName="Imya" />
+                <ScalarProperty Name="Familiya" ColumnName="Familiya" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

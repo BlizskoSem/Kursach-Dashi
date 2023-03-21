@@ -10,10 +10,10 @@
         <EntityTypeShape EntityType="Kontrol_PitaniaModel.Группа" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Kontrol_PitaniaModel.Завтрак" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Kontrol_PitaniaModel.Обед" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kontrol_PitaniaModel.Ребенок" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Kontrol_PitaniaModel.Регистрация" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Kontrol_PitaniaModel.Ужин" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Kontrol_PitaniaModel.Воспитатели" Width="1.5" PointX="7.75" PointY="5.25" />
+        <EntityTypeShape EntityType="Kontrol_PitaniaModel.Ребенок" Width="1.5" PointX="3.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

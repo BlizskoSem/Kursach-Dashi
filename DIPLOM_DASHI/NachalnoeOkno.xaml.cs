@@ -19,6 +19,12 @@ namespace DIPLOM_DASHI
     /// </summary>
     public partial class NachalnoeOkno : Window
     {
+        public TextBox Familiya { get; private set; }
+        public TextBox Imya { get; private set; }
+        public TextBox Otchestvo { get; private set; }
+        public object Название_Группы { get; private set; }
+        public DateTime Дата_Рождения { get; private set; }
+
         public NachalnoeOkno()
         {
             InitializeComponent();
@@ -109,30 +115,30 @@ namespace DIPLOM_DASHI
 
             if (log != "")
             {
-                MessageBox.Show("Введите фамилию");
+                MessageBox.Show(log);
                 log = "";
                 return;
             }
 
-            if (log != "")
+
+            Models.Ребенок ребенок = new Models.Ребенок();
             {
-                MessageBox.Show("Введите имя");
-                log = "";
-                return;
-            }
+                Familiya = TxtFamiliya;
+                    Imya = TXTIMYA;
+                    Otchestvo = TxtOtcestvo;
+                    Дата_Рождения = (DateTime)DatePickerBerth.SelectedDate;
 
 
-            if (log != "")
-            {
-                MessageBox.Show("Введите отчество");
-                log = "";
-                return;
-            }
+            };
+            Helpers.BD.Kontrol_PitaniaEntities1.Ребенок.Add(ребенок);
+            
+            MessageBox.Show("Данные добавлены");
 
 
 
-           
-           
+
+
+
 
         }
 

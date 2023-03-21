@@ -30,9 +30,9 @@ namespace DIPLOM_DASHI.Models
         public virtual DbSet<Группа> Группа { get; set; }
         public virtual DbSet<Завтрак> Завтрак { get; set; }
         public virtual DbSet<Обед> Обед { get; set; }
-        public virtual DbSet<Ребенок> Ребенок { get; set; }
         public virtual DbSet<Регистрация> Регистрация { get; set; }
         public virtual DbSet<Ужин> Ужин { get; set; }
         public virtual DbSet<Воспитатели> Воспитатели { get; set; }
+        public virtual DbSet<Ребенок> Ребенок { get; set; }
     }
 }

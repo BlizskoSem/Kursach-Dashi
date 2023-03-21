@@ -66,6 +66,10 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\BD.cs" />
     <Compile Include="Helpers\BD2.cs" />
+    <Compile Include="Helpers\Obed.cs" />
+    <Compile Include="Helpers\Testovi.cs" />
+    <Compile Include="Helpers\Uzhin.cs" />
+    <Compile Include="Helpers\Zavtrak.cs" />
     <Compile Include="Models2\Authorizations.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
